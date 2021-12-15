@@ -9,6 +9,7 @@ function App() {
       <AppNavigator />
       <Routes>
         <Route path="/" element={<Pokedex />} />
+        <Route path="/pokemon/:id" element={<Pokedex />} />
       </Routes>
     </Router>
   )
