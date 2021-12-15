@@ -30,7 +30,7 @@ function Pokedex() {
             <Grid container spacing={2}>
                 {pokemonData.map((pokemon) => {
                     return  (
-                        <PokemonCard pokemon={} />
+                        <PokemonCard pokemon={pokemon} image={pokemon.url}/>
                     )
                 })}
             </Grid>
