@@ -1,6 +1,7 @@
 import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 import React from 'react'
 import { makeStyles } from '@mui/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
     card: {
@@ -26,15 +27,17 @@ export default function PokemonCard(props) {
     const { pokemon, image } = props
     const { id, name } = pokemon
     return (
-        <Grid item xs={12} sm={2}>
-            <Card className={classes.card}>
-                <CardMedia className={classes.cardMedia} image={image}></CardMedia>
-                <CardContent className={classes.cardContent}>
-                    <Typography>
-                        {name}
-                    </Typography>
-                </CardContent>
-            </Card>
-        </Grid>
+        <Link>
+            <Grid item xs={12} sm={2}>
+                <Card className={classes.card}>
+                    <CardMedia className={classes.cardMedia} image={image}></CardMedia>
+                    <CardContent className={classes.cardContent}>
+                        <Typography>
+                            {name}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Grid>
+        </Link>
     )
 }
