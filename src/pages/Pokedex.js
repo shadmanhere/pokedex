@@ -3,9 +3,19 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { POKEMON_API_URL, IMAGE_API_URL } from '../config'
 import PokemonCard from '../components/PokemonCard'
+import { makeStyles } from '@mui/styles';
+
+
+const useStyles = makeStyles(theme => ({
+    pokedexContainer: {
+        textAlign: 'center',
+        padding: "80px 10px 0px 10px"
+    }
+}))
 
 function Pokedex() {
     const [pokemonData, setPokemonData] = useState(null)
+    const classes = useStyles()
     useEffect(() => {
         axios.get(POKEMON_API_URL+'?limit=800').then(response => {
             if(response.status >= 200 && response.status < 300){
@@ -27,10 +37,10 @@ function Pokedex() {
     return (
         <Box>
            {pokemonData ? 
-            <Grid container spacing={2}>
+            <Grid className={classes.pokedexContainer} container spacing={2}>
                 {pokemonData.map((pokemon) => {
                     return  (
-                        <PokemonCard pokemon={pokemon} image={pokemon.url}/>
+                        <PokemonCard pokemon={pokemon} image={pokemon.url} key={pokemon.id} />
                     )
                 })}
             </Grid>
