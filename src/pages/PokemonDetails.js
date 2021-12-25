@@ -9,6 +9,11 @@ import { connect } from 'react-redux'
 
 
 const styles = (theme) => ({
+  "@global": {
+    body: {
+      backgroundColor: 'rgb(68,68,68)'
+    }
+  },
   pokedexContainer: {
     height: "84vh",
     backgroundColor: "black",
@@ -67,7 +72,7 @@ class PokemonDetails extends Component {
     if (pokemon) {
       const { name, sprites, height, weight, types } = pokemon;
       return (
-        <Box>
+        <Box className={classes.pokedexContainerBackground}>
           <Box className={classes.pokedexContainer}>
             <Typography className={classes.textTitle} variant="h1">
               {name}
