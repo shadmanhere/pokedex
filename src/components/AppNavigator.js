@@ -24,7 +24,10 @@ function AppNavigator() {
         <AppBar className={classes.appBar} position="fixed">
             <Toolbar>
                 <Link to="/" className={classes.link}>
-                    <Typography className={classes.title}>Pokedex</Typography>
+                    <Typography variant="h6" className={classes.title}>Pokedex</Typography>
+                </Link>
+                <Link to="/favourites" className={classes.link}>
+                    <Typography variant="h6" className={classes.title} style={{marginLeft:15}}>Favourites</Typography>
                 </Link>
             </Toolbar>
         </AppBar>
