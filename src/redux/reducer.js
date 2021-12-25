@@ -5,7 +5,6 @@ const initialData = {
 };
 
 const pokemonReducer =
-  () =>
   (state = initialData, action) => {
     switch (action.type) {
       case TOGGLE_FAVOURITE:
